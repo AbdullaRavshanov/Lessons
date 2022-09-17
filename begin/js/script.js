@@ -36,5 +36,5 @@
 
 // console.log(`http://someurl.com/${category}/5`);
 
-console.log('arr' + ' - object');
-console.log(4 + "5");
+// console.log('arr' + ' - object');
+// console.log(4 + "5");+
