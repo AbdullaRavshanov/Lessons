@@ -166,16 +166,99 @@ let num = 50;
 
 // console.log(result);
 
-const lines = 5;
-let result = '';
+// const lines = 5;
+// let result = '';
 
-for (let i = 0; i <= lines; i++) {
-    for (let j = 0; j < lines - i; j++) {
-        result += "-";
-    }
-    for (let j = 0; j < 2 * i + 1; j++) {
-        result += "*";
-    }
-    result += "\n";
-}
-console.log(result);
+// for (let i = 0; i <= lines; i++) {
+//     for (let j = 0; j < lines - i; j++) {
+//         result += "-";
+//     }
+//     for (let j = 0; j < 2 * i + 1; j++) {
+//         result += "*";
+//     }
+//     result += "\n";
+// }
+// console.log(result);
+
+// Функциии--------------------
+// let num = 20;
+// function showFirstMessage(text) {
+//     return (text);
+//     num = 10;
+// }
+// showFirstMessage("Hello world");
+// console.log(num);
+
+// function calc(a,b) {
+//     return (a + b);
+// }
+
+// console.log(calc(3,2));
+// console.log(calc(2,8));
+// console.log(calc(5,6));
+
+// function ret() {
+//     let num = 50;
+//     return num;
+// }
+
+// const anotherNum = ret();
+// console.log(anotherNum);
+ 
+// const usdCurr = 28;
+// const eurCurr = 32
+
+// function convert(amount, curr) {
+//     console.log(curr * amount);
+// }
+
+// convert(500, usdCurr);
+// convert(500, eurCurr);
+
+// function sayHello(name) {
+//     return `HI!, ${name}`;
+// }
+// sayHello('Alex');
+// const ram = sayHello('alex');
+// console.log(ram);
+
+// function returnNeighboringNumbers(num) {
+//     return [num - 1, num, num + 1];
+// }
+// returnNeighboringNumbers(5);
+
+// const number = returnNeighboringNumbers(5);
+
+// console.log(number);
+
+// function getMathResult(num, times) {
+//     if (typeof(times) !== 'number' || times <= 0) {
+//         return (num);
+//     }
+
+//     let str = '';
+
+//     for (let i = 1; i <= times; i++){
+//         if (i === times) {
+//             str += `${num * i}`;
+//         } else {
+//             str += `${num * i}---` ;
+//         }
+//      }
+//     return str;
+// }
+
+// console.log(getMathResult(3,3));
+
+const fruit = "Some fruit";
+
+console.log(fruit.indexOf("fruit"));
+
+const logg = "hello world";
+
+console.log(logg.slice(6,11));
+console.log(logg.substring(6, 11));
+console.log(logg.substr(6,5));
+
+const num = 12.2;
+console.log(Math.round(num));
