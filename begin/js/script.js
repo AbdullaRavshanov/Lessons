@@ -250,15 +250,108 @@ let num = 50;
 
 // console.log(getMathResult(3,3));
 
-const fruit = "Some fruit";
+// const fruit = "Some fruit";
 
-console.log(fruit.indexOf("fruit"));
+// console.log(fruit.indexOf("fruit"));
 
-const logg = "hello world";
+// const logg = "hello world";
 
-console.log(logg.slice(6,11));
-console.log(logg.substring(6, 11));
-console.log(logg.substr(6,5));
+// console.log(logg.slice(6,11));
+// console.log(logg.substring(6, 11));
+// console.log(logg.substr(6,5));
 
-const num = 12.2;
-console.log(Math.round(num));
+// const num = 12.2;
+// console.log(Math.round(num));
+    /* задача: посчитать обьем и площадь куба*/
+// function calculateVolumeAndArea(length) {
+//     if (typeof(length) !== 'number' || length < 0 || !Number.isInteger(length)){
+//         return "При вычислении произошла ошибка";
+//     }
+
+//     let volume = 0,
+//         area = 0;
+
+//     volume = length * length * length;
+//     area = 6 * (length * length);
+
+//     return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+// }
+// console.log(calculateVolumeAndArea(5));
+    // /* задача на определение мест в поезде купе*/
+// function getCoupeNumber(seatNumber){
+//     if (typeof(seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)){
+//         return ("Ошибка. Проверьте правильность введенного номера места!");
+//     }
+
+//     if (seatNumber === 0 || seatNumber > 36) {
+//         return ("Таких мест в вагоне не существует");
+//     }
+//     return Math.ceil(seatNumber / 4);
+// }
+// console.log(getCoupeNumber(33));
+
+/* вывести строку приняв минуты и вывести в часах*/
+function getTimeFromMinutes(time) {
+    if (typeof (time) != 'number' || time < 0 || !Number.isInteger(time)) {
+        return "Ошибка, проверьте данные";
+    }
+
+    const hours = Math.floor(time / 60);
+    const min = time % 60;
+
+    let hoursStr = '';
+
+    switch (hours) {
+        case 0:
+            hoursStr = 'часов';
+            break;
+        case 1:
+            hoursStr = 'час';
+            break;
+        case 2:
+        case 3:
+        case 4:
+            hoursStr = 'часа';
+            break;
+        default:
+            hoursStr = 'часов';
+    }
+    return `это ${hours} ${hoursStr} и ${min} минут`
+}
+
+console.log(getTimeFromMinutes(180));
+/* найти максимальное число*/
+function findMaxNumber(a,b,c,d) {
+    if (typeof(a) != 'number' || typeof(b) != 'number' ||
+        typeof(c) != 'number' || typeof(d) != 'number') {
+    return 0;
+    } else {
+        return Math.max(a,b,c,d);
+    }
+}
+console.log(findMaxNumber(1,5,6.6,4));
+
+/* число фибонначи*/
+
+function numb(num) {
+    if (typeof(num) != 'number' || num < 0 || !Number.isInteger(num)) {
+        return '';
+    }
+    let result = '';
+    let first = 0;
+    let second = 1;
+
+    for (let i = 0; i < num; i++){
+        if (i + 1 === num) {
+            result = result + `${first}`;
+        } 
+        else {
+            result = result + `${first} `;
+        }
+        let third = first + second;
+        first = second;
+        second = third;
+    }
+    return result;
+}
+console.log(numb(3));
