@@ -46,23 +46,23 @@
 //     console.log('Я сыт!');
 // }
 
-const hamburger = 3;
-const fries = 3;
-const cola = 0;
-const nuggets = 2;
+// const hamburger = 3;
+// const fries = 3;
+// const cola = 0;
+// const nuggets = 2;
 
-if (hamburger === 3 && cola ===2 || fries === 3 && nuggets) {
-    console.log('Все ты!');
-} else {
-    console.log('мы ухходим');
-}
-console.log(hamburger || cola || fries);
+// if (hamburger === 3 && cola ===2 || fries === 3 && nuggets) {
+//     console.log('Все ты!');
+// } else {
+//     console.log('мы ухходим');
+// }
+// console.log(hamburger || cola || fries);
 
-// let johnReport, alexReport, samReport, mariaReport = 'done';
+// // let johnReport, alexReport, samReport, mariaReport = 'done';
 
-// console.log(johnReport || alexReport || samReport || mariaReport);
+// // console.log(johnReport || alexReport || samReport || mariaReport);
 
-let num = 50;
+// let num = 50;
 
 // while (num < 55){
 //     console.log(num);
@@ -291,67 +291,299 @@ let num = 50;
 // console.log(getCoupeNumber(33));
 
 /* вывести строку приняв минуты и вывести в часах*/
-function getTimeFromMinutes(time) {
-    if (typeof (time) != 'number' || time < 0 || !Number.isInteger(time)) {
-        return "Ошибка, проверьте данные";
+// function getTimeFromMinutes(time) {
+//     if (typeof (time) != 'number' || time < 0 || !Number.isInteger(time)) {
+//         return "Ошибка, проверьте данные";
+//     }
+
+//     const hours = Math.floor(time / 60);
+//     const min = time % 60;
+
+//     let hoursStr = '';
+
+//     switch (hours) {
+//         case 0:
+//             hoursStr = 'часов';
+//             break;
+//         case 1:
+//             hoursStr = 'час';
+//             break;
+//         case 2:
+//         case 3:
+//         case 4:
+//             hoursStr = 'часа';
+//             break;
+//         default:
+//             hoursStr = 'часов';
+//     }
+//     return `это ${hours} ${hoursStr} и ${min} минут`
+// }
+
+// console.log(getTimeFromMinutes(180));
+// /* найти максимальное число*/
+// function findMaxNumber(a,b,c,d) {
+//     if (typeof(a) != 'number' || typeof(b) != 'number' ||
+//         typeof(c) != 'number' || typeof(d) != 'number') {
+//     return 0;
+//     } else {
+//         return Math.max(a,b,c,d);
+//     }
+// }
+// console.log(findMaxNumber(1,5,6.6,4));
+
+// /* число фибонначи*/
+
+// function numb(num) {
+//     if (typeof(num) != 'number' || num < 0 || !Number.isInteger(num)) {
+//         return '';
+//     }
+//     let result = '';
+//     let first = 0;
+//     let second = 1;
+
+//     for (let i = 0; i < num; i++){
+//         if (i + 1 === num) {
+//             result = result + `${first}`;
+//         } 
+//         else {
+//             result = result + `${first} `;
+//         }
+//         let third = first + second;
+//         first = second;
+//         second = third;
+//     }
+//     return result;
+// }
+// console.log(numb(3));
+
+
+/* обьекты и их разные способы записи*/
+
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     }
+//     // makeTest: function() {
+//     //     console.log("Test"); // метод makeTest такой же метод ка keys
+//     // }
+// };
+//options.makeTest();
+
+// const {border, bg} = options.colors; // деструктуризация обьектов, отдельные переменные
+// console.log(border);
+
+// console.log(Object.keys(options).length);
+// console.log(options.colors.bg);
+// console.log(options["colors"]["bg"]);
+
+// delete options.name;
+// console.log(options);
+//let counter = 0;
+// for (let key in options) {
+//     if (typeof(options[key]) === 'object'){
+//         for (let i in options[key]){
+//             console.log(`Свойство ${i} имеет ${options[key][i]}`);
+//             //counter++;
+//        }
+//     }else {
+//         console.log(`Свойство ${key} имеет ${options[key]}`);
+//        // counter++;
+//     }
+    
+// }
+// console.log(options);
+// console.log(counter);/* не выводит точное число обьектов, это из за условий*/
+
+
+// Массивы 
+const arr = [1, 2, 3, 6, 8, 10];
+// arr[99] = 0;
+// console.log(arr.length); // length возврщает последнее значение массива +1, [0,1,2,3,4] = 5
+// console.log(arr);
+arr.sort(compareNum); // sort сортирует строки, но с цифрами это делается по другому
+console.log(arr);
+
+function compareNum(a, b){
+    return a-b;
+}
+// arr.forEach(function(item, i, arr){
+//     console.log(`${i}: ${item} внитри массива ${arr}`);
+// });
+
+// // arr.pop(); // удаляет последнее значение массива
+// // arr.push(10); //добавление значение в конец массива
+// // console.log(arr);
+
+// // for (let i = 0; i < arr.length; i++) {
+// //     console.log(arr[i]);
+// // }
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+// const str = prompt("", "");
+// const products = str.split(", ");
+// console.log(products.join(': ')); // Обьяденение элементов массива с промежуточным ;
+
+
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%'
+//         },
+//         exp: '1 month'
+//     },
+//     showAgeAndLangs: function(plan){
+//         const {age} = plan;
+//         const {languages} = plan.skills;
+//         let str = `Мне ${age} и я владею языками: `;
+        
+//         languages.forEach(function(lang){
+//             str += `${lang.toUpperCase()} `;
+//         });
+//         return str;
+//     }
+// };
+// console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+
+// function showExperience(plan) {
+//     const {exp} = plan.skills;
+//     return exp;
+// }
+// console.log(showExperience(personalPlanPeter));
+
+// function showProgrammingLangs(plan) {
+//     let str = '';
+//     const {programmingLangs} = plan.skills;
+    
+//     for (let key in programmingLangs){
+//         str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+        
+//     }
+//     return str;
+// }
+// console.log(showProgrammingLangs(personalPlanPeter));
+
+//***************************************************************** */
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+function showFamily(arr) {
+    let str = '';
+    if (arr.length === 0){
+        str += 'Семья пуста';
+        
+    }else {
+        str += 'Семья состоит из:';
+        
     }
-
-    const hours = Math.floor(time / 60);
-    const min = time % 60;
-
-    let hoursStr = '';
-
-    switch (hours) {
-        case 0:
-            hoursStr = 'часов';
-            break;
-        case 1:
-            hoursStr = 'час';
-            break;
-        case 2:
-        case 3:
-        case 4:
-            hoursStr = 'часа';
-            break;
-        default:
-            hoursStr = 'часов';
-    }
-    return `это ${hours} ${hoursStr} и ${min} минут`
+    arr.forEach(member => {
+        str += `${member} `;
+    });
+    return str;
 }
 
-console.log(getTimeFromMinutes(180));
-/* найти максимальное число*/
-function findMaxNumber(a,b,c,d) {
-    if (typeof(a) != 'number' || typeof(b) != 'number' ||
-        typeof(c) != 'number' || typeof(d) != 'number') {
-    return 0;
-    } else {
-        return Math.max(a,b,c,d);
-    }
+console.log(showFamily(family));
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+    arr.forEach(city => {
+        console.log(city.toLowerCase())
+    })
+
 }
-console.log(findMaxNumber(1,5,6.6,4));
+standardizeStrings(favoriteCities);
 
-/* число фибонначи*/
+/*Задача с собеседований. Напишите функцию reverse, которая принимает в себя строку и возвращает эту строку в обратном порядке.
+Пример:
+const someString = 'This is some strange string';
+reverse(someString) => 'gnirts egnarts emos si sihT'
 
-function numb(num) {
-    if (typeof(num) != 'number' || num < 0 || !Number.isInteger(num)) {
-        return '';
-    }
-    let result = '';
-    let first = 0;
-    let second = 1;
+Функцию можно применить к любой строке.
+ Если в функцию приходит не строка - вернуть сообщение "Ошибка!"
 
-    for (let i = 0; i < num; i++){
-        if (i + 1 === num) {
-            result = result + `${first}`;
-        } 
-        else {
-            result = result + `${first} `;
+Это очень интересная задача, которую можно решить несколькими способами.
+ Её дают для того, чтобы оценить навыки и знания программиста, посмотреть как он думает. 
+ Как небольшая подсказка, есть метод, который может вам помочь. 
+И часть дополнительных вариантов решения мы тоже изучим в течении курса.*/
+const someString = 'This is some strange string';
+
+function reverse(str) {
+   if (typeof(str) !== 'string'){
+    return "ОШибка!";
+   }
+   return str.split('').reverse().join('');
+}
+console.log(reverse(someString));
+
+/* Представьте такую реальную ситуацию. У вас есть банкомат, 
+который выдает деньги из двух разных банков в разных валютах. 
+Один банк основной с базовыми валютами, второй дополнительный с прочими валютами:
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+Вам нужно создать главную функцию банкомата availableCurr, 
+которая принимает два аргумента: первый - это массив со всеми доступными валютами из 
+двух банков сразу (сейчас представим, что они не могут повторяться), 
+второй - необязательный аргумент, который указывает ту валюту,
+ которая сейчас закончилась в банкомате.
+  Если массив в первом аргументе пустой - то функция возвращает строку 'Нет доступных валют'.
+   Функция возвращает строку в нужном виде.
+
+Пример:
+availableCurr(['UAH', 'RUB', 'CNY'], 'CNY')
+Вернет строку:
+Доступные валюты:
+UAH
+RUB
+Заметьте:
+- CNY (юань) исчез из списка валют, значит такая валюта закончилась
+- После валюты: стоит перенос строки \n, и после каждой валюты тоже. Это важно для тестов
+- Данные для первого аргумента должны приходить сразу из двух банков,
+ причем сначала baseCurrencies, потом additionalCurrencies по порядку*/
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+    let str = '';
+    arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+    arr.forEach(function(curr, i){
+        if (curr !== missingCurr){
+            str += `${curr}\n`;
         }
-        let third = first + second;
-        first = second;
-        second = third;
-    }
-    return result;
+    });
+    return str;
 }
-console.log(numb(3));
+console.log(availableCurr([...baseCurrencies,...additionalCurrencies], 'CNY'));
+//++++++++++++++++++++++++++++++++++++++++++++++++++++
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 
+'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+
+function sortStudentsByGroups(arr){
+    arr.sort();
+    const a = [], b = [], c = [], count = [];
+
+    for (let i = 0; i < arr.length; i++){
+        if (i < 3){
+            a.push(arr[i]);
+        } else if (i < 6){
+            b.push(arr[i]);
+        }else if (i < 9){
+            c.push(arr[i]);
+        }else {
+            count.push(arr[i]);
+        }
+    }
+    return[a,b,c,`Оставшиеся студенты: ${count.length === 0 ? '-' : count.join(', ')}`];
+}
+console.log(sortStudentsByGroups(students));
